@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELZZ STORE VPN - ELZZ NET | Solusi Kebutuhan Digital Anda</title>
+    
+    <meta name="description" content="ELZZ NET menyediakan layanan VPN Premium (SSH, Vmess, Trojan), VPS (SG, ID), DOR Kuota, dan solusi digital lainnya. Cepat, aman, murah, dan InsyaAllah Amanah. Support 24/7.">
+    
+    <link rel="icon" href="https://placehold.co/32x32/8b5cf6/ffffff?text=E&font=sans-serif" type="image/png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        // Konfigurasi Tailwind
+        tailwind.config = {
+            darkMode: 'class', // Mengaktifkan mode gelap via class
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // Set font default ke Inter
+                    },
+                    colors: {
+                        // Aksen warna neon
+                        primary: {
+                            DEFAULT: '#8b5cf6', // Ungu
+                            '50': '#f5f3ff',
+                            '100': '#ede9fe',
+                            '200': '#ddd6fe',
+                            '300': '#c4b5fd',
+                            '400': '#a78bfa',
+                            '500': '#8b5cf6',
+                            '600': '#7c3aed',
+                            '700': '#6d28d9',
+                            '800': '#5b21b6',
+                            '900': '#4c1d95',
+                            '950': '#2e1065'
+                        },
+                        secondary: '#3b82f6', // Biru
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'subtle-pulse': 'subtlePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        subtlePulse: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '.7' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+
+    <style>
+        /* CSS untuk Parallax Sederhana & Efek Lainnya */
+        .hero-parallax {
+            /* Ganti URL gambar ini dengan gambar latar beresolusi tinggi yang relevan */
+            background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), url('https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Styling untuk Carousel Testimoni */
+        .carousel-container {
+            touch-action: pan-y;
+        }
+        .carousel-track {
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .carousel-slide {
+            flex: 0 0 100%;
+        }
+
+        /* Styling untuk Tombol WA Mengambang */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+            z-index: 40;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Styling untuk Animasi Scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            /* Terapkan animasi saat kelas 'is-visible' ditambahkan */
+            will-change: opacity, transform;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            /* Mulai sedikit ke bawah */
+            transform: translateY(20px);
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 font-sans leading-relaxed">
+
+    <header id="header" class="sticky top-0 z-50 w-full bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm dark:shadow-gray-800 transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex-shrink-0 flex items-center">
+                    <img class="h-10 w-auto" src="https://placehold.co/150x40/1f2937/a78bfa?text=ELZZ+NET&font=sans-serif" alt="ELZZ NET Logo">
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-400 transition-colors">Home</a>
+                    <a href="#layanan" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-400 transition-colors">Layanan</a>
+                    <a href="#keunggulan" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-400 transition-colors">Keunggulan</a>
+                    <a href="#testimoni" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-400 transition-colors">Testimoni</a>
+                    
+                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5">
+                        <i data-lucide="sun" class="h-5 w-5 hidden dark:block"></i>
+                        <i data-lucide="moon" class="h-5 w-5 block dark:hidden"></i>
+                    </button>
+
+                    <a href="https://wa.me/6285137264392?text=Halo%20ELZZ%20NET,%20saya%20ingin%20memesan%20layanan%20Anda." target="_blank" class="px-5 py-2.5 bg-primary-600 text-white font-semibold rounded-lg shadow-md hover:bg-primary-700 transition-all duration-300 transform hover:scale-105">
+                        Order Sekarang
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="theme-toggle-mobile" type="button" class="mr-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5">
+                        <i data-lucide="sun" class="h-5 w-5 hidden dark:block"></i>
+                        <i data-lucide="moon" class="h-5 w-5 block dark:hidden"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="p-2 text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-400">
+                        <i data-lucide="menu" class="h-6 w-6 mobile-menu-open-icon"></i>
+                        <i data-lucide="x" class="h-6 w-6 mobile-menu-close-icon hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-900 shadow-lg">
+            <a href="#hero" class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800">Home</a>
+            <a href="#layanan" class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800">Layanan</a>
+            <a href="#keunggulan" class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800">Keunggulan</a>
+            <a href="#testimoni" class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800">Testimoni</a>
+            <a href="https://wa.me/6285137264392?text=Halo%20ELZZ%20NET,%20saya%20ingin%20memesan%20layanan%20Anda." target="_blank" class="block w-full text-left px-4 py-4 bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors">
+                Order Sekarang
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="relative hero-parallax min-h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-950/50 via-gray-950/80 to-gray-950/0 dark:from-gray-950/50 dark:via-gray-950/80 dark:to-transparent z-0"></div>
+
+            <div class="relative z-10 animate-on-scroll">
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                    ELZZ STORE VPN
+                    <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary">
+                        ELZZ NET
+                    </span>
+                </h1>
+                <p class="max-w-2xl mx-auto text-lg sm:text-xl text-gray-200 dark:text-gray-300 mb-10">
+                    Solusi Internet Cepat, Aman, dan Murah Anda.
+                    Temukan semua kebutuhan digital Anda di satu tempat.
+                </p>
+                <a href="https://wa.me/6285137264392?text=Halo%20ELZZ%20NET,%20saya%20ingin%20memesan%20layanan%20Anda." target="_blank" class="inline-block px-10 py-4 bg-gradient-to-r from-primary-600 to-secondary text-white text-lg font-bold rounded-lg shadow-lg hover:shadow-primary/50 dark:hover:shadow-primary-400/50 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300">
+                    Order Sekarang
+                </a>
+            </div>
+            
+            <div class="absolute -bottom-1/2 left-0 w-full h-1/2 bg-gradient-to-t from-white dark:from-gray-950 z-5"></div>
+        </section>
+
+        <section id="layanan" class="py-24 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <span class="text-primary-600 dark:text-primary-400 font-semibold uppercase">Layanan Kami</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-gray-900 dark:text-white mt-2">Solusi Digital Terlengkap</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <div class="flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary/20 dark:hover:shadow-primary-700/30 p-8 transform hover:-translate-y-2 transition-all duration-300 animate-on-scroll">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-lg mb-6">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Akun VPN Premium</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Akses internet aman & cepat. Support berbagai protokol:
+                        </p>
+                        <ul class="list-none space-y-2 mt-4 text-left">
+                            <li class="flex items-center text-gray-700 dark:text-gray-200">
+                                <i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 flex-shrink-0"></i>
+                                <strong>SSH (Multiport)</strong>
+                            </li>
+                            <li class="flex items-center text-gray-700 dark:text-gray-200">
+                                <i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 flex-shrink-0"></i>
+                                <strong>Vmess (VM)</strong>
+                            </li>
+                            <li class="flex items-center text-gray-700 dark:text-gray-200">
+                                <i data-lucide="check" class="w-5 h-5 text-green-500 mr-2 flex-shrink-0"></i>
+                                <strong>Trojan (TR)</strong>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary/20 dark:hover:shadow-primary-700/30 p-8 transform hover:-translate-y-2 transition-all duration-300 animate-on-scroll" style="animation-delay: 100ms;">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-lg mb-6">
+                            <i data-lucide="server" class="w-6 h-6 text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">VPS (Virtual Private Server)</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Server handal untuk kebutuhan tunneling, bot, atau hosting Anda.</p>
+                        
+                        <div class="text-left text-sm space-y-3">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-gray-100 mb-1">🇸🇬 Region Singapore</h4>
+                                <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                                    <li><strong>Rank 1 (SG Herza):</strong> RAM 1GB - 105K (BW Unli)</li>
+                                    <li><strong>Rank 2 (SG Leaseweb):</strong> RAM 6GB - 160K (BW 30TB)</li>
+                                    <li><strong>Rank 3 (SG Melbi):</strong> RAM 2GB - 160K (BW Unli)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-gray-100 mb-1">🇮🇩 Region Indonesia</h4>
+                                <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                                    <li><strong>Rank 1 (ID Herza):</strong> RAM 1GB - 110K (BW Unli)</li>
+                                    <li><strong>Rank 2 (ID IKDZ):</strong> RAM 1GB - 125K (BW Unli)</li>
+                                    <li><strong>Rank 3 (ID Biznet GIO):</strong> RAM 1GB - 70K (BW Unli)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary/20 dark:hover:shadow-primary-700/30 p-8 transform hover:-translate-y-2 transition-all duration-300 animate-on-scroll" style="animation-delay: 200ms;">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-lg mb-6">
+                            <i data-lucide="wifi" class="w-6 h-6 text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">DOR Kuota</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Layanan 'tembak' kuota internet harga miring, cepat dan praktis.</p>
+                        <ul class="list-none space-y-2 text-left">
+                            <li class="flex items-center text-gray-700 dark:text-gray-200">
+                                <i data-lucide="package" class="w-5 h-5 text-primary-500 mr-2 flex-shrink-0"></i>
+                                Paket Tembak Vidi Beats 20GB
+                            </li>
+                            <li class="flex items-center text-gray-700 dark:text-gray-200">
+                                <i data-lucide="package" class="w-5 h-5 text-primary-500 mr-2 flex-shrink-0"></i>
+                                Apps TikTok
+                            </li>
+                            <li class="flex items-center text-gray-700 dark:text-gray-200">
+                                <i data-lucide="calendar-plus" class="w-5 h-5 text-primary-500 mr-2 flex-shrink-0"></i>
+                                Perpanjang Masa Aktif
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary/20 dark:hover:shadow-primary-700/30 p-8 transform hover:-translate-y-2 transition-all duration-300 animate-on-scroll">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-lg mb-6">
+                            <i data-lucide="smartphone-charging" class="w-6 h-6 text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Isi Ulang & Pulsa</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Isi ulang pulsa, paket data, dan token listrik dengan proses instan.</p>
+                    </div>
+
+                    <div class="flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary/20 dark:hover:shadow-primary-700/30 p-8 transform hover:-translate-y-2 transition-all duration-300 animate-on-scroll" style="animation-delay: 100ms;">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-lg mb-6">
+                            <i data-lucide="gem" class="w-6 h-6 text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Akun Premium</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Sedia akun premium (Netflix, Spotify, dll) legal, aman, dan bergaransi.</p>
+
+                    </div>
+
+                    <div class="flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary/20 dark:hover:shadow-primary-700/30 p-8 transform hover:-translate-y-2 transition-all duration-300 animate-on-scroll" style="animation-delay: 200ms;">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-lg mb-6">
+                            <i data-lucide="hard-drive-upload" class="w-6 h-6 text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Jasa Download/Upload</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Butuh download file besar? Kami bantu dengan koneksi super cepat kami.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="keunggulan" class="py-24 bg-white dark:bg-gray-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <span class="text-primary-600 dark:text-primary-400 font-semibold uppercase">Keunggulan</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-gray-900 dark:text-white mt-2">Kenapa Memilih ELZZ NET?</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div class="text-center animate-on-scroll">
+                        <div class="flex items-center justify-center w-16 h-16 bg-primary-100 dark:bg-primary-900/50 rounded-full mx-auto mb-6">
+                            <i data-lucide="rocket" class="w-8 h-8 text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Proses Cepat</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Layanan kami proses secepat kilat. Order, bayar, dan langsung aktif.</p>
+                    </div>
+                    <div class="text-center animate-on-scroll" style="animation-delay: 100ms;">
+                        <div class="flex items-center justify-center w-16 h-16 bg-primary-100 dark:bg-primary-900/50 rounded-full mx-auto mb-6">
+                            <i data-lucide="dollar-sign" class="w-8 h-8 text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Harga Bersaing</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Kami menawarkan harga terbaik dan paling kompetitif di pasaran.</p>
+                    </div>
+                    <div class="text-center animate-on-scroll" style="animation-delay: 200ms;">
+                        <div class="flex items-center justify-center w-16 h-16 bg-primary-100 dark:bg-primary-900/50 rounded-full mx-auto mb-6">
+                            <i data-lucide="headphones" class="w-8 h-8 text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Support 24/7</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Tim support kami siap membantu Anda kapanpun Anda butuhkan, 24 jam sehari.</p>
+                    </div>
+                    <div class="text-center animate-on-scroll" style="animation-delay: 300ms;">
+                        <div class="flex items-center justify-center w-16 h-16 bg-primary-100 dark:bg-primary-900/50 rounded-full mx-auto mb-6">
+                            <i data-lucide="check-circle" class="w-8 h-8 text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">InsyaAllah Amanah</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Kepercayaan Anda adalah prioritas kami. Kami berbisnis dengan jujur.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimoni" class="py-24 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <span class="text-primary-600 dark:text-primary-400 font-semibold uppercase">Testimoni</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-gray-900 dark:text-white mt-2">Kata Mereka Tentang Kami</h2>
+                </div>
+
+                <div class="relative max-w-3xl mx-auto carousel-container overflow-hidden animate-on-scroll">
+                    <div id="carousel-track" class="flex">
+                        <div class="carousel-slide p-4">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
+                                <div class="flex justify-center text-yellow-400 mb-4">
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                </div>
+                                <p class="text-lg italic text-gray-600 dark:text-gray-300 mb-6">"Pelayanannya cepat banget, order VPN gak sampai 5 menit udah aktif. Recommended seller, InsyaAllah amanah!"</p>
+                                <img class="w-16 h-16 rounded-full mx-auto mb-2" src="https://placehold.co/100x100/e2e8f0/64748b?text=A&font=sans-serif" alt="Foto Pelanggan">
+                                <h4 class="font-bold text-gray-900 dark:text-white">Ahmad Fauzi</h4>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Mahasiswa</span>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide p-4">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
+                                <div class="flex justify-center text-yellow-400 mb-4">
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                </div>
+                                <p class="text-lg italic text-gray-600 dark:text-gray-300 mb-6">"VPS saya jadi kenceng banget setelah di-tuning sama ELZZ NET. Harganya juga murah meriah. Mantap!"</p>
+                                <img class="w-16 h-16 rounded-full mx-auto mb-2" src="https://placehold.co/100x100/e2e8f0/64748b?text=S&font=sans-serif" alt="Foto Pelanggan">
+                                <h4 class="font-bold text-gray-900 dark:text-white">Siti Nurhaliza</h4>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Web Developer</span>
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide p-4">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
+                                <div class="flex justify-center text-yellow-400 mb-4">
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-lucide="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-lucide="star-half" fill="currentColor" class="w-5 h-5"></i>
+                                </div>
+                                <p class="text-lg italic text-gray-600 dark:text-gray-300 mb-6">"Sering beli DOR Kuota di sini, selalu masuk dan harganya paling oke. Adminnya ramah dan fast response."</p>
+                                <img class="w-16 h-16 rounded-full mx-auto mb-2" src="https://placehold.co/100x100/e2e8f0/64748b?text=B&font=sans-serif" alt="Foto Pelanggan">
+                                <h4 class="font-bold text-gray-900 dark:text-white">Budi Santoso</h4>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Freelancer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="carousel-prev" class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-700 rounded-full p-2 shadow-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 transition">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button id="carousel-next" class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-700 rounded-full p-2 shadow-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 transition">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+
+                    <div id="carousel-dots" class="flex justify-center space-x-2 mt-8">
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-r from-primary-600 to-secondary py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-on-scroll">
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-6">
+                    Siap Meningkatkan Pengalaman Digital Anda?
+                </h2>
+                <p class="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
+                    Jangan ragu untuk menghubungi kami. Tim kami siap membantu Anda menemukan solusi terbaik untuk kebutuhan Anda.
+                </p>
+                <a href="https://wa.me/6285137264392?text=Halo%20ELZZ%20NET,%20saya%20ingin%20memesan%20layanan%20Anda." target="_blank" class="inline-block px-10 py-4 bg-white text-primary-600 text-lg font-bold rounded-lg shadow-lg hover:shadow-primary-300/50 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300">
+                    Hubungi Kami Sekarang
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-gray-950 text-gray-600 dark:text-gray-400 pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4">ELZZ NET</h4>
+                    <p class="text-base">
+                        Solusi terpercaya untuk semua kebutuhan digital Anda. Cepat, aman, murah, dan InsyaAllah Amanah.
+                    </p>
+                    <p class="mt-4">Elzz Network Est 2020</p>
+                </div>
+
+                <div>
+                    <h5 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4 uppercase">Navigasi</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#hero" class="hover:text-primary dark:hover:text-primary-400 transition-colors">Home</a></li>
+                        <li><a href="#layanan" class="hover:text-primary dark:hover:text-primary-400 transition-colors">Layanan</a></li>
+                        <li><a href="#keunggulan" class="hover:text-primary dark:hover:text-primary-400 transition-colors">Keunggulan</a></li>
+                        <li><a href="#testimoni" class="hover:text-primary dark:hover:text-primary-400 transition-colors">Testimoni</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4 uppercase">Layanan</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#layanan" class="hover:text-primary dark:hover:text-primary-400 transition-colors">VPN Premium</a></li>
+                        <li><a href="#layanan" class="hover:text-primary dark:hover:text-primary-400 transition-colors">VPS</a></li>
+                        <li><a href="#layanan" class="hover:text-primary dark:hover:text-primary-400 transition-colors">DOR Kuota</a></li>
+                        <li><a href="#layanan" class="hover:text-primary dark:hover:text-primary-400 transition-colors">Akun Premium</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4 uppercase">Hubungi Kami</h5>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="w-5 h-5 mr-2 text-primary-500"></i>
+                            <span>support@elzz.net</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="w-5 h-5 mr-2 text-primary-500"></i>
+                            <span>+62 851-3726-4392</span>
+                        </li>
+                    </ul>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://wa.me/6285137264392?text=Halo%20ELZZ%20NET" target="_blank" class="text-gray-500 hover:text-green-500 transition-colors">
+                            <i data-lucide="message-circle" class="w-6 h-6"></i>
+                            <span class="sr-only">WhatsApp</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-pink-500 transition-colors">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-400 transition-colors">
+                            <i data-lucide="twitter" class="w-6 h-6"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 border-t border-gray-200 dark:border-gray-800 py-8 text-center">
+                <p class="text-base">
+                    ©️ <span id="current-year"></span> Elzz Network. InsyaAllah Amanah.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <a href="https://wa.me/6285137264392?text=Halo%20ELZZ%20NET,%20saya%20ingin%20memesan%20layanan%20Anda." target="_blank" class="whatsapp-float" aria-label="Hubungi via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 12c0 1.78.46 3.45 1.29 4.94L2.05 22l5.3-1.38c1.42.79 3.03 1.21 4.69 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91zM17.2 15.2c-.22-.12-1.3-.64-1.5-.72-.2-.07-.34-.12-.49.12-.15.23-.57.72-.7 
+.86-.13.15-.26.17-.48.05-.23-.12-1-.37-1.9-1.18-.7-.64-1.17-1.42-1.3-1.67-.13-.25-.01-.38.11-.5.1-.12.23-.3.34-.44.12-.15.15-.25.23-.42.08-.17.04-.31-.01-.43s-1.3-3.13-1.8-4.28c-.46-1.03-.92-.89-1.25-.91-.3-.02-.64-.02-.98-.02-.34 
+0-.88.12-1.34.57-.46.45-1.75 1.7-1.75 4.15 0 2.45 1.78 4.8 2.03 5.12.25.33 3.48 5.3 8.44 7.4 1.15.48 2.07.77 2.78.98.83.25 1.58.21 2.17.12.66-.09 1.97-.8 2.25-1.58.28-.78.28-1.44.2-1.58-.09-.15-.33-.23-.55-.35z"/>
+        </svg>
+    </a>
+
+
+    <script>
+        // Panggil Lucide Icons
+        lucide.createIcons();
+
+        // Copyright Tahun Sekarang
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // --- Dark Mode Toggle ---
+        const themeToggleButtons = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
+        const sunIcons = document.querySelectorAll('#theme-toggle [data-lucide="sun"], #theme-toggle-mobile [data-lucide="sun"]');
+        const moonIcons = document.querySelectorAll('#theme-toggle [data-lucide="moon"], #theme-toggle-mobile [data-lucide="moon"]');
+
+        // Cek tema saat halaman dimuat
+        if (localStorage.getItem('color-theme') === 'dark' || 
+           (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            moonIcons.forEach(icon => icon.classList.add('hidden'));
+            sunIcons.forEach(icon => icon.classList.remove('hidden'));
+        } else {
+            document.documentElement.classList.remove('dark');
+            moonIcons.forEach(icon => icon.classList.remove('hidden'));
+            sunIcons.forEach(icon => icon.classList.add('hidden'));
+        }
+
+        const toggleTheme = () => {
+            // Toggle tema
+            document.documentElement.classList.toggle('dark');
+            
+            // Update ikon
+            moonIcons.forEach(icon => icon.classList.toggle('hidden'));
+            sunIcons.forEach(icon => icon.classList.toggle('hidden'));
+
+            // Simpan preferensi
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                localStorage.setItem('color-theme', 'light');
+            }
+        };
+
+        themeToggleButtons.forEach(btn => {
+            btn.addEventListener('click', toggleTheme);
+        });
+
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOpenIcon = mobileMenuButton.querySelector('.mobile-menu-open-icon');
+        const mobileMenuCloseIcon = mobileMenuButton.querySelector('.mobile-menu-close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Ganti ikon menu/tutup
+            mobileMenuOpenIcon.classList.toggle('hidden');
+            mobileMenuCloseIcon.classList.toggle('hidden');
+        });
+
+        // Tutup menu mobile saat link di-klik
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                // Pastikan ikon kembali ke 'menu' saat ditutup
+                mobileMenuOpenIcon.classList.remove('hidden');
+                mobileMenuCloseIcon.classList.add('hidden');
+            });
+        });
+
+        // --- Testimonial Carousel ---
+        const track = document.getElementById('carousel-track');
+        const slides = Array.from(track.children);
+        const prevButton = document.getElementById('carousel-prev'); // Tombol kiri
+        const nextButton = document.getElementById('carousel-next'); // Tombol kanan
+        const dotsNav = document.getElementById('carousel-dots');
+        
+        let slideWidth = 0;
+        if (slides.length > 0) {
+            slideWidth = slides[0].getBoundingClientRect().width;
+        }
+        
+        let currentIndex = 0;
+        let autoPlayInterval;
+
+        // Buat dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-gray-300', 'dark:bg-gray-600', 'transition-all');
+            dot.addEventListener('click', () => {
+                moveToSlide(index);
+                resetAutoPlay();
+            });
+            dotsNav.appendChild(dot);
+        });
+        const dots = Array.from(dotsNav.children);
+        
+        const updateDots = (targetIndex) => {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('bg-primary-600', index === targetIndex);
+                dot.classList.toggle('dark:bg-primary-400', index === targetIndex);
+                dot.classList.toggle('bg-gray-300', index !== targetIndex);
+                dot.classList.toggle('dark:bg-gray-600', index !== targetIndex);
+            });
+        };
+
+        const moveToSlide = (targetIndex) => {
+            if (slides.length === 0) return;
+
+            if (targetIndex < 0) targetIndex = slides.length - 1;
+            if (targetIndex >= slides.length) targetIndex = 0;
+            
+            if (slideWidth === 0 && slides.length > 0) {
+                 slideWidth = slides[0].getBoundingClientRect().width;
+                 if (slideWidth === 0) return; 
+            }
+
+            track.style.transform = 'translateX(-' + (slideWidth * targetIndex) + 'px)';
+            currentIndex = targetIndex;
+            updateDots(currentIndex);
+        };
+
+        // Event Listeners
+        nextButton.addEventListener('click', () => {
+            moveToSlide(currentIndex + 1);
+            resetAutoPlay();
+        });
+        prevButton.addEventListener('click', () => {
+            moveToSlide(currentIndex - 1);
+            resetAutoPlay();
+        });
+
+        // Autoplay
+        const startAutoPlay = () => {
+            autoPlayInterval = setInterval(() => {
+                moveToSlide(currentIndex + 1);
+            }, 5000); // Ganti slide setiap 5 detik
+        };
+
+        const resetAutoPlay = () => {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        };
+
+        // Inisialisasi
+        if (slides.length > 0) {
+            updateDots(0);
+            startAutoPlay();
+        }
+
+        // Sesuaikan carousel saat ukuran window berubah
+        window.addEventListener('resize', () => {
+            if (slides.length > 0) {
+                slideWidth = slides[0].getBoundingClientRect().width;
+                if (slideWidth > 0) {
+                    track.style.transition = 'none'; // Matikan transisi sementara
+                    track.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
+                    setTimeout(() => {
+                        track.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)'; // Nyalakan lagi
+                    }, 50);
+                }
+            }
+        });
+
+
+        // --- Scroll Animation (Intersection Observer) ---
+        const scrollElements = document.querySelectorAll('.animate-on-scroll');
+
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add('is-visible');
+        };
+
+        const hideScrollElement = (element) => {
+            element.classList.remove('is-visible');
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.15)) { // Sedikit trigger lebih awal
+                    displayScrollElement(el);
+                } 
+                // Opsional: sembunyikan lagi saat scroll ke atas
+                // else {
+                //     hideScrollElement(el);
+                // }
+            });
+        };
+
+        // Panggil saat load dan saat scroll
+        window.addEventListener('load', handleScrollAnimation);
+        window.addEventListener('scroll', handleScrollAnimation);
+
+    </script>
+</body>
+</html>
