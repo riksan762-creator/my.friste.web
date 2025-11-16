@@ -1,80 +1,68 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>ElzzStore VPN Tunnel | Jual VPN Config, VPS Tunneling & XL Data</title>
-    
-    <!-- Deskripsi Meta -->
-    <meta name="description" content="ElzzStore VPN menyediakan VPN Config (SSH, Vmess, Trojan) dengan server SG & ID, VPS Tunneling Dedikasi, dan berbagai Paket Data XL Khusus. Harga hemat, kualitas premium.">
-    
-    <!-- Load Tailwind CSS -->
+    <meta name="description" content="ElzzStore VPN menyediakan VPN Config (SSH, Vmess, Trojan) dengan server SG & ID, VPS Tunneling Dedikasi, dan berbagai Paket Data XL Khusus. Harga hemat, kualitas premium."/>
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Load Lucide Icons -->
+
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Google Fonts (Inter) -->
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
     <script>
-        // Konfigurasi Tailwind (Menggunakan 'class' untuk Dark Mode)
         tailwind.config = {
-            darkMode: 'class', 
+            darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        // Warna Primary (Biru Elektrik, High-Tech)
                         primary: {
-                            DEFAULT: '#3b82f6', 
-                            '50': '#eff6ff',
-                            '100': '#dbeafe',
-                            '200': '#bfdbfe',
-                            '300': '#93c5fd',
-                            '400': '#60a5fa',
-                            '500': '#3b82f6', // Warna utama
-                            '600': '#2563eb',
-                            '700': '#1d4ed8',
-                            '800': '#1e40af',
-                            '900': '#1e3a8a',
-                            '950': '#172554'
+                            DEFAULT: '#3b82f6',
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            950: '#172554'
                         },
-                        // Warna Secondary (Cyan Aksen)
-                        secondary: '#06b6d4', 
+                        secondary: '#06b6d4'
                     },
-                    // Animasi Canggih
                     animation: {
                         'subtle-pulse': 'subtlePulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'blob': 'blob 7s infinite',
+                        'blob': 'blob 7s infinite'
                     },
                     keyframes: {
                         blob: {
                             '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
                             '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' }
                         }
                     }
-                },
-            },
+                }
+            }
         }
     </script>
 
-    <!-- CSS Kustom untuk Efek Latar Belakang -->
     <style>
-        /* Efek latar belakang untuk Hero Section */
         .hero-parallax {
-            /* Latar belakang gelap high-tech */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url('https://placehold.co/1920x1080/1f2937/ffffff?text=ELZZ+NETWORK');
+            background-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.95)), url('https://placehold.co/1920x1080/1f2937/ffffff?text=ELZZ+NETWORK');
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
 
-        /* Tombol WhatsApp Mengambang */
         .whatsapp-float {
             position: fixed;
             width: 56px;
@@ -86,7 +74,7 @@
             border-radius: 50%;
             text-align: center;
             font-size: 28px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.35);
             z-index: 50;
             transition: all 0.3s ease;
             display: flex;
@@ -94,49 +82,58 @@
             justify-content: center;
         }
 
-        /* Styling untuk tablet/mobile */
+        .animation-delay-4000 { animation-delay: 4s; }
+
+        /* Blob placeholders (visual only) */
+        .blob-bg {
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            filter: blur(60px);
+            background: radial-gradient(circle at 30% 30%, rgba(59,130,246,0.12), transparent 30%),
+                        radial-gradient(circle at 70% 70%, rgba(6,182,212,0.10), transparent 30%);
+            opacity: .8;
+            transform-origin: center;
+        }
+
+        /* mobile */
         @media (max-width: 768px) {
-            .pricing-table-grid {
-                grid-template-columns: 1fr;
-            }
+            .pricing-table-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-
 <body class="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 font-sans leading-relaxed transition-colors duration-500">
 
-    <!-- ===== HEADER / NAVIGATION BAR ===== -->
+    <!-- HEADER -->
     <header id="header" class="sticky top-0 z-50 w-full bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-xl dark:shadow-gray-800/50 transition-all duration-300">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
                 <a href="#" class="flex-shrink-0 flex items-center text-2xl font-black text-primary-600 dark:text-primary-400">
-                    <i data-lucide="shield-plus" class="h-7 w-7 mr-2"></i>
-                    ELZZSTORE VPN
+                    <i data-lucide="shield-plus" class="h-7 w-7 mr-2"></i> ELZZSTORE VPN
                 </a>
 
-                <!-- Navigasi Desktop & Dark Mode Toggle -->
                 <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
                     <a href="#vpn" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">VPN Config</a>
-                    <a href="#data" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">XL Data Khusus</a>
-                    <a href="#vps" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">VPS Tunneling</a>
+                    <a href="#data" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">XL Data</a>
+                    <a href="#vps" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">VPS</a>
                     <a href="#keunggulan" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">Keunggulan</a>
-                    
-                    <!-- Tombol Dark/Light Mode -->
+                    <a href="#sewa-sc" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">Sewa SC</a>
+                    <a href="#aktivasi" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">Aktivasi</a>
+                    <a href="#akun-premium" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">Akun Premium</a>
+
                     <button id="theme-toggle" class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Dark Mode">
                         <i data-lucide="sun" class="h-6 w-6 theme-icon-sun"></i>
                         <i data-lucide="moon" class="h-6 w-6 theme-icon-moon hidden"></i>
                     </button>
 
-                    <!-- Tombol Kontak -->
-                    <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20tertarik%20untuk%20order%20VPN%20Config%20Premium." target="_blank" class="px-5 py-2.5 bg-primary-500 text-white font-semibold rounded-lg shadow-md hover:bg-primary-600 transition-all duration-300 transform hover:scale-[1.03]">
+                    <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20tertarik%20untuk%20order%20VPN%20Config%20Premium." target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-primary-500 text-white font-semibold rounded-lg shadow-md hover:bg-primary-600 transition-all duration-300 transform hover:scale-[1.03]">
                         Order via WA: 0851-3726-4392
                     </a>
                 </div>
 
-                <!-- Tombol Menu Mobile & Dark Mode -->
                 <div class="md:hidden flex items-center space-x-2">
-                     <button id="theme-toggle-mobile" class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Dark Mode Mobile">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Dark Mode Mobile">
                         <i data-lucide="sun" class="h-6 w-6 theme-icon-sun"></i>
                         <i data-lucide="moon" class="h-6 w-6 theme-icon-moon hidden"></i>
                     </button>
@@ -148,27 +145,28 @@
             </div>
         </nav>
 
-        <!-- Menu Mobile (Dropdown) -->
         <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-900 shadow-xl border-t border-gray-100 dark:border-gray-800">
             <a href="#vpn" class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-primary-500/10 transition-colors">VPN Config</a>
-            <a href="#data" class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-primary-500/10 transition-colors">XL Data Khusus</a>
-            <a href="#vps" class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-primary-500/10 transition-colors">VPS Tunneling</a>
+            <a href="#data" class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-primary-500/10 transition-colors">XL Data</a>
+            <a href="#vps" class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-primary-500/10 transition-colors">VPS</a>
             <a href="#keunggulan" class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-primary-500/10 transition-colors">Keunggulan</a>
-            <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20tertarik%20untuk%20order%20VPN%20Config%20Premium." target="_blank" class="block w-full text-left px-4 py-4 bg-primary-500 text-white font-semibold hover:bg-primary-600 transition-colors">
+            <a href="#sewa-sc" class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-primary-500/10 transition-colors">Sewa SC</a>
+            <a href="#aktivasi" class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-primary-500/10 transition-colors">Aktivasi Kartu</a>
+            <a href="#akun-premium" class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-primary-500/10 transition-colors">Akun Premium</a>
+            <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20tertarik%20untuk%20order%20VPN%20Config%20Premium." target="_blank" rel="noopener noreferrer" class="block w-full text-left px-4 py-4 bg-primary-500 text-white font-semibold hover:bg-primary-600 transition-colors">
                 Hubungi: 0851-3726-4392
             </a>
         </div>
     </header>
 
     <main>
-        <!-- ===== HERO SECTION (ElzzStore) ===== -->
+        <!-- HERO -->
         <section id="hero" class="relative hero-parallax min-h-[85vh] flex items-center justify-center text-center px-4 overflow-hidden">
-            <!-- Elemen Dekoratif Canggih -->
             <div class="absolute inset-0 z-0 opacity-20">
                 <div class="blob-bg top-1/4 left-1/4 animate-blob"></div>
                 <div class="blob-bg bottom-1/4 right-1/4 animate-blob animation-delay-4000"></div>
             </div>
-            
+
             <div class="relative z-10 p-6">
                 <p class="text-secondary text-lg font-bold uppercase tracking-widest mb-2">ELZZSTORE VPN TUNNEL EST 2020</p>
                 <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-snug mb-4">
@@ -181,14 +179,14 @@
                 <p class="max-w-3xl mx-auto text-lg sm:text-xl text-gray-300 mb-10">
                     Akses internet aman dan stabil dengan protokol SSH, Vmess, Vless, dan Trojan, didukung oleh VPS berkualitas tinggi SG & ID.
                 </p>
-                <a href="#vpn" class="inline-flex items-center space-x-2 px-10 py-4 bg-primary-500 text-white text-lg font-bold rounded-full shadow-2xl shadow-primary-500/50 transform hover:scale-105 hover:shadow-primary-400 transition-all duration-300">
+                <a href="#vpn" class="inline-flex items-center space-x-2 px-10 py-4 bg-primary-500 text-white text-lg font-bold rounded-full shadow-2xl shadow-primary-500/50 transform hover:scale-105 hover:shadow-primary-400 transition-all duration-300" aria-label="Lihat Harga VPN Config">
                     <i data-lucide="zap" class="w-6 h-6"></i>
                     <span>LIHAT HARGA VPN CONFIG</span>
                 </a>
             </div>
         </section>
 
-        <!-- ===== VPN CONFIG PRICING SECTION ===== -->
+        <!-- VPN CONFIG -->
         <section id="vpn" class="py-24 bg-gray-100 dark:bg-gray-900 transition-colors duration-500">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -197,10 +195,8 @@
                     <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Tersedia untuk berbagai protokol dengan pilihan masa aktif fleksibel hingga 90 hari.</p>
                 </div>
 
-                <!-- Pricing Grid for SG and ID -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pricing-table-grid max-w-6xl mx-auto">
-                    
-                    <!-- Server Singapore -->
+                    <!-- SG -->
                     <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 lg:p-8 border-t-8 border-primary-500 flex flex-col">
                         <div class="text-center mb-6">
                             <i data-lucide="globe" class="w-10 h-10 text-primary-500 mx-auto mb-2"></i>
@@ -208,9 +204,7 @@
                             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">SG-Herza / SG-Melbi / SG-Lease</p>
                             <p class="text-lg font-bold text-secondary mt-3">Protokol: SSH | Vmess | Vless | Trojan</p>
                         </div>
-                        
                         <div class="space-y-4 flex-grow">
-                            <!-- Items -->
                             <div class="flex justify-between items-center border-b pb-2 border-gray-100 dark:border-gray-700">
                                 <span class="font-bold text-gray-700 dark:text-gray-200">15 Hari / 1 IP</span>
                                 <span class="text-xl font-black text-primary-600">Rp 5.000</span>
@@ -236,12 +230,12 @@
                             </div>
                         </div>
 
-                        <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20mau%20order%20VPN%20Config%20Server%20Singapore." target="_blank" class="mt-8 px-8 py-3 bg-primary-500 text-white font-bold rounded-lg hover:bg-primary-600 transition-colors shadow-lg text-center">
+                        <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20mau%20order%20VPN%20Config%20Server%20Singapore." target="_blank" rel="noopener noreferrer" class="mt-8 px-8 py-3 bg-primary-500 text-white font-bold rounded-lg hover:bg-primary-600 transition-colors shadow-lg text-center">
                             Order Config SG
                         </a>
                     </div>
 
-                    <!-- Server Indonesia -->
+                    <!-- ID -->
                     <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 lg:p-8 border-t-8 border-secondary flex flex-col">
                         <div class="text-center mb-6">
                             <i data-lucide="cloud" class="w-10 h-10 text-secondary mx-auto mb-2"></i>
@@ -249,9 +243,7 @@
                             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">ID-Ikd / ID-Nusa / ID-Biznet</p>
                             <p class="text-lg font-bold text-primary-500 mt-3">Protokol: SSH | Vmess | Vless | Trojan</p>
                         </div>
-                        
                         <div class="space-y-4 flex-grow">
-                            <!-- Items -->
                             <div class="flex justify-between items-center border-b pb-2 border-gray-100 dark:border-gray-700">
                                 <span class="font-bold text-gray-700 dark:text-gray-200">15 Hari / 1 IP</span>
                                 <span class="text-xl font-black text-secondary">Rp 6.000</span>
@@ -277,7 +269,7 @@
                             </div>
                         </div>
 
-                        <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20mau%20order%20VPN%20Config%20Server%20Indonesia." target="_blank" class="mt-8 px-8 py-3 bg-secondary text-white font-bold rounded-lg hover:bg-secondary/90 transition-colors shadow-lg text-center">
+                        <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20mau%20order%20VPN%20Config%20Server%20Indonesia." target="_blank" rel="noopener noreferrer" class="mt-8 px-8 py-3 bg-secondary text-white font-bold rounded-lg hover:bg-secondary/90 transition-colors shadow-lg text-center">
                             Order Config ID
                         </a>
                     </div>
@@ -285,7 +277,7 @@
             </div>
         </section>
 
-        <!-- ===== XL DATA SPECIAL PACKAGE SECTION ===== -->
+        <!-- XL DATA -->
         <section id="data" class="py-24 bg-white dark:bg-gray-950 transition-colors duration-500">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -294,10 +286,8 @@
                     <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Paket-paket ini dioptimalkan untuk injeksi VPN, memberikan kuota besar dan masa aktif 1 bulan (kuota + config).</p>
                 </div>
 
-                <!-- Data Package Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- XL BIZ E-COMMERCE -->
+                    <!-- Cards ... (tetap dipertahankan dari versi asli) -->
                     <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-t-4 border-red-500 hover:shadow-red-500/30 transition-shadow duration-300">
                         <div class="flex justify-between items-start mb-3">
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white">XL BIZ E-COMMERCE</h3>
@@ -309,11 +299,10 @@
                             <li class="flex items-center"><i data-lucide="check-square" class="w-4 h-4 mr-2 text-green-500"></i> Paket khusus inject VPN & Siap Pakai</li>
                         </ul>
                     </div>
-                    
-                    <!-- XL UNLI VIDI BEAST -->
+
                     <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-t-4 border-yellow-500 hover:shadow-yellow-500/30 transition-shadow duration-300">
                         <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">XL UNLI VIDI BEAST</h3>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">XL UNLI PROS</h3>
                             <span class="text-2xl font-black text-yellow-500">50K</span>
                         </div>
                         <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
@@ -323,20 +312,18 @@
                         </ul>
                     </div>
 
-                    <!-- XL VIP DOUBLE YOUTUBE -->
                     <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-t-4 border-purple-500 hover:shadow-purple-500/30 transition-shadow duration-300">
                         <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">XL VIP DOUBLE YT</h3>
-                            <span class="text-2xl font-black text-purple-500">75K</span>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">XL SHOPEEFOOD</h3>
+                            <span class="text-2xl font-black text-purple-500">65K</span>
                         </div>
                         <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                             <li class="flex items-center"><i data-lucide="calendar" class="w-4 h-4 mr-2 text-primary-500"></i> Masa Aktif: 1 Bulan</li>
-                            <li class="flex items-center"><i data-lucide="infinity" class="w-4 h-4 mr-2 text-primary-500"></i> Kuota: Unlimited</li>
-                            <li class="flex items-center"><i data-lucide="globe" class="w-4 h-4 mr-2 text-primary-500"></i> Support Semua Daerah</li>
+                            <li class="flex items-center"><i data-lucide="infinity" class="w-4 h-4 mr-2 text-primary-500"></i> FUP: Unlimited</li>
+                            <li class="flex items-center"><i data-lucide="globe" class="w-4 h-4 mr-2 text-primary-500"></i> Siap Pakai + Config</li>
                         </ul>
                     </div>
-                    
-                    <!-- XL UDEMY -->
+
                     <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-t-4 border-green-500 hover:shadow-green-500/30 transition-shadow duration-300">
                         <div class="flex justify-between items-start mb-3">
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white">XL UDEMY (NON-UNLI)</h3>
@@ -348,12 +335,11 @@
                             <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2 text-green-500"></i> Resmi Official XL & Siap Pakai</li>
                         </ul>
                     </div>
-                    
-                    <!-- XL EDUKASI -->
+
                     <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-t-4 border-indigo-500 hover:shadow-indigo-500/30 transition-shadow duration-300">
                         <div class="flex justify-between items-start mb-3">
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white">XL EDUKASI (NON-UNLI)</h3>
-                            <span class="text-2xl font-black text-indigo-500">40K</span>
+                            <span class="text-2xl font-black text-indigo-500">45K</span>
                         </div>
                         <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                             <li class="flex items-center"><i data-lucide="calendar" class="w-4 h-4 mr-2 text-primary-500"></i> Masa Aktif: 1 Bulan</li>
@@ -362,11 +348,10 @@
                         </ul>
                     </div>
 
-                    <!-- XL CONFERENCE -->
                     <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-t-4 border-cyan-500 hover:shadow-cyan-500/30 transition-shadow duration-300">
                         <div class="flex justify-between items-start mb-3">
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white">XL CONFERENCE (NON-UNLI)</h3>
-                            <span class="text-2xl font-black text-cyan-500">45K</span>
+                            <span class="text-2xl font-black text-cyan-500">50k</span>
                         </div>
                         <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                             <li class="flex items-center"><i data-lucide="calendar" class="w-4 h-4 mr-2 text-primary-500"></i> Masa Aktif: 1 Bulan</li>
@@ -374,18 +359,17 @@
                             <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2 text-green-500"></i> Resmi Official XL & Siap Pakai</li>
                         </ul>
                     </div>
-
                 </div>
 
                 <div class="text-center mt-12">
-                    <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20mau%20order%20Paket%20XL%20Khusus%20Inject%20VPN." target="_blank" class="inline-block px-8 py-3 bg-secondary text-white font-bold rounded-lg hover:bg-secondary/90 transition-colors shadow-lg shadow-secondary/40">
+                    <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20mau%20order%20Paket%20XL%20Khusus%20Inject%20VPN." target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-secondary text-white font-bold rounded-lg hover:bg-secondary/90 transition-colors shadow-lg shadow-secondary/40">
                         Order Paket XL & Config via WA
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- ===== VPS TUNNELING SECTION (DEDICATED & BERSAMA) ===== -->
+        <!-- VPS -->
         <section id="vps" class="py-24 bg-gray-100 dark:bg-gray-900 transition-colors duration-500">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -394,13 +378,10 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <!-- VPS DEDICATED SG -->
                     <div class="lg:col-span-1 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border-l-4 border-primary-500">
                         <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-4 flex items-center"><i data-lucide="server" class="w-6 h-6 mr-2 text-primary-500"></i> DEDICATED VPS 🇸🇬 SINGAPORE</h3>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Server SG Herza, Leaseweb, dan Melbi dengan jaminan BW.</p>
-                        
                         <div class="space-y-4">
-                            <!-- Herza RAM 1/2 -->
                             <div class="p-3 bg-primary-50/50 dark:bg-gray-700/50 rounded-lg">
                                 <p class="font-bold text-lg text-primary-600 dark:text-primary-400">SG - HERZA</p>
                                 <ul class="space-y-1 text-sm">
@@ -408,14 +389,12 @@
                                     <li class="flex justify-between"><span>⚙️ RAM 2 GB / BW UNLIMITED</span> <span class="font-bold">Rp 180K</span></li>
                                 </ul>
                             </div>
-                            <!-- Leaseweb RAM 6 -->
                             <div class="p-3 bg-primary-50/50 dark:bg-gray-700/50 rounded-lg">
                                 <p class="font-bold text-lg text-primary-600 dark:text-primary-400">SG - LEASEWEB</p>
                                 <ul class="space-y-1 text-sm">
                                     <li class="flex justify-between"><span>⚙️ RAM 6 GB / BW 30TB</span> <span class="font-bold">Rp 160K</span></li>
                                 </ul>
                             </div>
-                            <!-- Melbi RAM 2 -->
                             <div class="p-3 bg-primary-50/50 dark:bg-gray-700/50 rounded-lg">
                                 <p class="font-bold text-lg text-primary-600 dark:text-primary-400">SG - MELBI</p>
                                 <ul class="space-y-1 text-sm">
@@ -425,27 +404,22 @@
                         </div>
                     </div>
 
-                    <!-- VPS DEDICATED ID -->
                     <div class="lg:col-span-1 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border-l-4 border-secondary">
                         <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-4 flex items-center"><i data-lucide="server-cog" class="w-6 h-6 mr-2 text-secondary"></i> DEDICATED VPS 🇮🇩 INDONESIA</h3>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Server ID IKDZ, Biznet GIO, dan Herza dengan kecepatan lokal.</p>
-                        
                         <div class="space-y-4">
-                            <!-- IKDZ RAM 1 -->
                             <div class="p-3 bg-secondary-50/50 dark:bg-gray-700/50 rounded-lg">
                                 <p class="font-bold text-lg text-secondary dark:text-secondary-400">ID - IKDZ</p>
                                 <ul class="space-y-1 text-sm">
                                     <li class="flex justify-between"><span>💠 RAM 1 GB / BW UNLIMITED</span> <span class="font-bold">Rp 125K</span></li>
                                 </ul>
                             </div>
-                            <!-- Biznet GIO RAM 1 -->
                             <div class="p-3 bg-secondary-50/50 dark:bg-gray-700/50 rounded-lg">
                                 <p class="font-bold text-lg text-secondary dark:text-secondary-400">ID - BIZNET GIO</p>
                                 <ul class="space-y-1 text-sm">
                                     <li class="flex justify-between"><span>💠 RAM 1 GB / BW UNLIMITED</span> <span class="font-bold">Rp 70K</span></li>
                                 </ul>
                             </div>
-                            <!-- Herza RAM 1 -->
                             <div class="p-3 bg-secondary-50/50 dark:bg-gray-700/50 rounded-lg">
                                 <p class="font-bold text-lg text-secondary dark:text-secondary-400">ID - HERZA</p>
                                 <ul class="space-y-1 text-sm">
@@ -455,11 +429,9 @@
                         </div>
                     </div>
 
-                    <!-- VPS RESS/BERSAMA & BENEFIT -->
                     <div class="lg:col-span-1 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border-l-4 border-gray-500">
                         <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-4 flex items-center"><i data-lucide="users" class="w-6 h-6 mr-2 text-gray-500"></i> VPS RESS/BERSAMA</h3>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Pilihan ekonomis untuk reseller atau penggunaan bersama.</p>
-                        
                         <div class="space-y-4 mb-8">
                             <div class="flex justify-between items-center p-3 bg-gray-100 dark:bg-gray-700 rounded-lg">
                                 <span class="font-bold text-gray-700 dark:text-gray-200">🛡 SERVER SG 🇸🇬</span>
@@ -484,8 +456,8 @@
                 </div>
             </div>
         </section>
-        
-        <!-- ===== KEUNGGULAN PREMIUM SECTION ===== -->
+
+        <!-- KEUNGGULAN -->
         <section id="keunggulan" class="py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-500">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -494,25 +466,21 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                    <!-- Keunggulan 1: Server Stabil -->
                     <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-xl border-b-4 border-primary-500 transform hover:translate-y-[-5px] transition-transform duration-300">
                         <i data-lucide="server-crash" class="w-10 h-10 text-primary-500 mx-auto mb-4"></i>
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Server Jarang Eror</h3>
                         <p class="text-gray-600 dark:text-gray-400 text-sm">Server stabil dan jarang down, koneksi terjamin 24/7. (🛡)</p>
                     </div>
-                    <!-- Keunggulan 2: Wildcard Support -->
                     <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-xl border-b-4 border-primary-500 transform hover:translate-y-[-5px] transition-transform duration-300">
                         <i data-lucide="aperture" class="w-10 h-10 text-primary-500 mx-auto mb-4"></i>
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Support Wildcard</h3>
                         <p class="text-gray-600 dark:text-gray-400 text-sm">Fitur dukungan Wildcard untuk fleksibilitas konfigurasi yang lebih tinggi. (🎖)</p>
                     </div>
-                    <!-- Keunggulan 3: Speed & Game -->
                     <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-xl border-b-4 border-primary-500 transform hover:translate-y-[-5px] transition-transform duration-300">
                         <i data-lucide="gamepad-2" class="w-10 h-10 text-primary-500 mx-auto mb-4"></i>
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Speed Stabil & Gaming</h3>
                         <p class="text-gray-600 dark:text-gray-400 text-sm">Speed stabil untuk streaming, Game, dan Voice Call/Telepon. (📲)</p>
                     </div>
-                    <!-- Keunggulan 4: Amanah & Garansi -->
                     <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-xl border-b-4 border-primary-500 transform hover:translate-y-[-5px] transition-transform duration-300">
                         <i data-lucide="shield-check" class="w-10 h-10 text-primary-500 mx-auto mb-4"></i>
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Amanah & Full Garansi</h3>
@@ -522,77 +490,210 @@
             </div>
         </section>
 
-        <!-- ===== CTA & SOCIAL SECTION (JOIN GROUP) ===== -->
+        <!-- ===== NEW: SEWA SC VPN / JASA AKTIVASI / AKUN PREMIUM ===== -->
+
+        <section id="sewa-sc" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-500">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white">🎖 SEWA SC VPN</h2>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Paket sewa script / SC VPN populer — cepat, mudah dipakai, siap jual.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-lg border-l-4 border-primary-500">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">SCRIPT BY ELZZ V1</h3>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Stabil • Support dasar • Siap pakai</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-extrabold text-primary-600">Rp10.000</div>
+                                <div class="text-sm text-gray-500">/ bulan</div>
+                            </div>
+                        </div>
+                        <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+                            <li>✅ Setup cepat</li>
+                            <li>✅ Panduan instalasi</li>
+                            <li>✅ Support via WA</li>
+                        </ul>
+                        <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20mau%20sewa%20SCRIPT%20BY%20ELZZ%20V1%20(%2010.000%2Fbln%20)." target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center px-4 py-3 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-600 transition-colors">Order Sekarang</a>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-lg border-l-4 border-yellow-500">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">SCRIPT BY POTATO</h3>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Fitur tambahan • Stabil</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-extrabold text-yellow-500">Rp 15.000</div>
+                                <div class="text-sm text-gray-500">/ bulan</div>
+                            </div>
+                        </div>
+                        <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+                            <li>✅ Fitur lanjutan</li>
+                            <li>✅ Backup & update ringan</li>
+                            <li>✅ Support via WA</li>
+                        </ul>
+                        <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20mau%20sewa%20SCRIPT%20BY%20POTATO%20(%2015.000%2Fbln%20)." target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center px-4 py-3 bg-yellow-500 text-white font-semibold rounded-lg hover:opacity-95 transition-colors">Order Sekarang</a>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-lg border-l-4 border-purple-500">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">SCRIPT BY FT</h3>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Kustom ringan • Siap produksi</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-extrabold text-purple-500">Rp 15.000</div>
+                                <div class="text-sm text-gray-500">/ bulan</div>
+                            </div>
+                        </div>
+                        <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+                            <li>✅ Stabil</li>
+                            <li>✅ Support instalasi</li>
+                            <li>✅ 1x update per bulan</li>
+                        </ul>
+                        <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20mau%20sewa%20SCRIPT%20BY%20FT%20(%2015.000%2Fbln%20)." target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center px-4 py-3 bg-purple-500 text-white font-semibold rounded-lg hover:opacity-95 transition-colors">Order Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     <div class="w-full bg-white dark:bg-gray-900 shadow-lg rounded-xl p-5 border border-gray-200 dark:border-gray-700 transition hover:shadow-xl">
+
+    <!-- Title -->
+    <p class="text-sm font-medium text-gray-600 dark:text-gray-400 tracking-wide">
+        Aktivasi Kartu (All Provider)
+    </p>
+
+    <div class="flex items-center justify-between mt-3">
+        <div class="text-right">
+            <div class="text-3xl font-extrabold text-green-600 leading-tight">
+                Rp 15.000
+            </div>
+            <div class="text-xs text-gray-400 mt-1 tracking-wide">
+                Harga Spesial
+            </div>
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-gray-200 dark:bg-gray-700 my-4"></div>
+
+    <!-- Feature List -->
+    <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+        <li class="flex items-center gap-2">
+            <span class="text-green-500 text-lg">✅</span>
+            Proses aktivasi & konfigurasi
+        </li>
+        <li class="flex items-center gap-2">
+            <span class="text-green-500 text-lg">✅</span>
+            Panduan pasca-aktivasi
+        </li>
+        <li class="flex items-center gap-2">
+            <span class="text-green-500 text-lg">✅</span>
+            Support via WhatsApp
+        </li>
+    </ul>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/6285137264392?text=Halo%20saya%20ingin%20order%20Aktivasi%20Kartu"
+       target="_blank"
+       class="mt-5 block w-full bg-green-600 hover:bg-green-700 text-white font-semibold text-center py-2.5 rounded-lg shadow-md transition-all">
+        Order Sekarang
+    </a>
+</div>
+        <!-- AKUN PREMIUM -->
+        <section id="akun-premium" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-500">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white">🎖 AKUN PREMIUM</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2">Akun premium murah — lisensi sementara, siap pakai.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-lg border-l-4 border-indigo-500">
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white">ALIGHMOTION</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">1 Tahun</p>
+                        <div class="mt-4 text-2xl font-extrabold text-indigo-600">Rp 20.000</div>
+                        <div class="text-sm text-gray-500 mb-4">(1 TH)</div>
+                        <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20mau%20beli%20ALIGHMOTION%201%20TH%20-%20Rp%2020.000." target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center px-4 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:opacity-95 transition-colors">Order</a>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-lg border-l-4 border-primary-500">
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white">CAPCUT PRO</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">1 Bulan</p>
+                        <div class="mt-4 text-2xl font-extrabold text-primary-600">Rp 20.000</div>
+                        <div class="text-sm text-gray-500 mb-4">(1 BLN)</div>
+                        <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20mau%20beli%20CAPCUT%20PRO%201%20BLN%20-%20Rp%2020.000." target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center px-4 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:opacity-95 transition-colors">Order</a>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-lg border-l-4 border-gray-500">
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white">LAINNYA</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Tanya admin untuk daftar layanan lain</p>
+                        <div class="mt-4 text-2xl font-extrabold text-gray-700">Tanya Admin</div>
+                        <div class="text-sm text-gray-500 mb-4">Harga bervariasi</div>
+                        <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20mau%20tanya%20soal%20akun%20premium%20lainnya." target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center px-4 py-3 bg-gray-700 text-white font-semibold rounded-lg hover:opacity-95 transition-colors">Tanya Admin</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
         <section class="bg-gradient-to-r from-gray-900 to-gray-800 py-20 dark:from-gray-800 dark:to-gray-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-4">
-                    Gabung Komunitas Kami Sekarang!
-                </h2>
-                <p class="text-lg text-primary-300 mb-8 max-w-2xl mx-auto">
-                    Dapatkan info update server, harga terbaru, dan testimoni langsung di grup dan saluran resmi kami.
-                </p>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-4">Gabung Komunitas Kami Sekarang!</h2>
+                <p class="text-lg text-primary-300 mb-8 max-w-2xl mx-auto">Dapatkan info update server, harga terbaru, dan testimoni langsung di grup dan saluran resmi kami.</p>
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a href="https://wa.me/6285137264392" target="_blank" class="inline-flex items-center px-6 py-3 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition-colors shadow-lg">
+                    <a href="https://wa.me/6285137264392" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition-colors shadow-lg">
                         <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i> WA Order
                     </a>
-                    <a href="https://chat.whatsapp.com/CKGJtYDFrSdDE6LcLGF9Kl" target="_blank" class="inline-flex items-center px-6 py-3 bg-gray-700 text-white font-bold rounded-full hover:bg-gray-600 transition-colors shadow-lg">
+                    <a href="https://chat.whatsapp.com/CKGJtYDFrSdDE6LcLGF9Kl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-gray-700 text-white font-bold rounded-full hover:bg-gray-600 transition-colors shadow-lg">
                         <i data-lucide="users" class="w-5 h-5 mr-2"></i> Grup Resmi 01
                     </a>
-                    <a href="https://whatsapp.com/channel/0029Vb4K5FnGZNCwYVJPCo2G" target="_blank" class="inline-flex items-center px-6 py-3 bg-secondary text-white font-bold rounded-full hover:bg-secondary/90 transition-colors shadow-lg">
+                    <a href="https://whatsapp.com/channel/0029Vb4K5FnGZNCwYVJPCo2G" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-secondary text-white font-bold rounded-full hover:bg-secondary/90 transition-colors shadow-lg">
                         <i data-lucide="megaphone" class="w-5 h-5 mr-2"></i> Saluran Testimoni
                     </a>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- FOOTER -->
     <footer class="bg-gray-950 text-gray-400 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Kolom 1: Logo & Kontak -->
                 <div class="mb-8 md:mb-0">
-                    <h4 class="text-xl font-black text-white mb-4 flex items-center">
-                        <i data-lucide="shield-plus" class="h-6 w-6 mr-2 text-primary-500"></i>
-                        ELZZ STORE NET
-                    </h4>
-                    <p class="text-base mb-4">
-                        Provider VPN Config dan VPS Tunneling terpercaya sejak 2020. Layanan cepat dan berkualitas.
-                    </p>
-                    <p class="flex items-center text-green-500 font-bold text-lg">
-                        <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>
-                        0851-3726-4392 (WA)
-                    </p>
-                    <a href="https://t.me/ElzzStoreVpn" target="_blank" class="flex items-center text-primary-500 font-bold text-lg mt-1">
-                        <i data-lucide="send" class="w-5 h-5 mr-2"></i>
-                        @ElzzStoreVpn (Telegram)
-                    </a>
+                    <h4 class="text-xl font-black text-white mb-4 flex items-center"><i data-lucide="shield-plus" class="h-6 w-6 mr-2 text-primary-500"></i> ELZZ STORE NET</h4>
+                    <p class="text-base mb-4">Provider VPN Config dan VPS Tunneling terpercaya sejak 2020. Layanan cepat dan berkualitas.</p>
+                    <p class="flex items-center text-green-500 font-bold text-lg"><i data-lucide="message-circle" class="w-5 h-5 mr-2"></i> 0851-3726-4392 (WA)</p>
+                    <a href="https://t.me/ElzzStoreVpn" target="_blank" rel="noopener noreferrer" class="flex items-center text-primary-500 font-bold text-lg mt-1"><i data-lucide="send" class="w-5 h-5 mr-2"></i> @ElzzStoreVpn (Telegram)</a>
                 </div>
 
-                <!-- Kolom 2: Layanan -->
                 <div>
                     <h5 class="text-lg font-semibold text-white mb-4 uppercase">Layanan Utama</h5>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#vpn" class="hover:text-primary-500 transition-colors">VPN Config SG & ID</a></li>
                         <li><a href="#data" class="hover:text-primary-500 transition-colors">XL Data Khusus Inject</a></li>
                         <li><a href="#vps" class="hover:text-primary-500 transition-colors">VPS Dedicated Tunneling</a></li>
-                        <li><a href="#vps" class="hover:text-primary-500 transition-colors">VPS Resseler / Bersama</a></li>
+                        <li><a href="#sewa-sc" class="hover:text-primary-500 transition-colors">Sewa SC VPN</a></li>
                     </ul>
                 </div>
 
-                <!-- Kolom 3: Grup Komunitas -->
                 <div>
                     <h5 class="text-lg font-semibold text-white mb-4 uppercase">Grup & Info</h5>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="https://chat.whatsapp.com/CKGJtYDFrSdDE6LcLGF9Kl" target="_blank" class="hover:text-primary-500 transition-colors">Grup Resmi 01 (WA)</a></li>
-                        <li><a href="https://chat.whatsapp.com/KJXIA6XwHg40tHrqekURLj" target="_blank" class="hover:text-primary-500 transition-colors">Grup Resmi 02 (WA)</a></li>
-                        <li><a href="https://whatsapp.com/channel/0029Vb4K5FnGZNCwYVJPCo2G" target="_blank" class="hover:text-primary-500 transition-colors">Saluran Testimoni</a></li>
-                        <li><a href="https://t.me/ElzzStoreVpn" target="_blank" class="hover:text-primary-500 transition-colors">Kontak Telegram</a></li>
+                        <li><a href="https://chat.whatsapp.com/CKGJtYDFrSdDE6LcLGF9Kl" target="_blank" rel="noopener noreferrer" class="hover:text-primary-500 transition-colors">Grup Resmi 01 (WA)</a></li>
+                        <li><a href="https://chat.whatsapp.com/CKGJtYDFrSdDE6LcLGF9Kl" class="hover:text-primary-500 transition-colors">Grup Resmi 02 (WA)</a></li>
+                        <li><a href="https://whatsapp.com/channel/0029Vb4K5FnGZNCwYVJPCo2G" target="_blank" rel="noopener noreferrer" class="hover:text-primary-500 transition-colors">Saluran Testimoni</a></li>
+                        <li><a href="https://t.me/ElzzStoreVpn" target="_blank" rel="noopener noreferrer" class="hover:text-primary-500 transition-colors">Kontak Telegram</a></li>
                     </ul>
                 </div>
 
-                <!-- Kolom 4: Protokol & Server -->
                 <div>
                     <h5 class="text-lg font-semibold text-white mb-4 uppercase">Protokol & Server</h5>
                     <ul class="space-y-2 text-sm">
@@ -603,36 +704,32 @@
                 </div>
             </div>
 
-            <!-- Copyright Bar -->
             <div class="mt-12 border-t border-gray-800 pt-8 text-center">
-                <p class="text-sm">
-                    █║▌║▌║ - ║▌║▌║ &nbsp; ©️ 2025 ELZZ STORE NET. Est 2020.
-                </p>
+                <p class="text-sm">█║▌║▌║ - ║▌║▌║ &nbsp; ©️ 2025 ELZZ STORE NET. Est 2020.</p>
             </div>
         </div>
     </footer>
 
-
-    <!-- ===== FLOATING WHATSAPP BUTTON (New Number) ===== -->
-    <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20tertarik%20dengan%20layanan%20Anda." target="_blank" class="whatsapp-float hover:scale-110" aria-label="Hubungi via WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+    <!-- FLOATING WA -->
+    <a href="https://wa.me/6285137264392?text=Halo%20ElzzStore,%20saya%20tertarik%20dengan%20layanan%20Anda." target="_blank" rel="noopener noreferrer" class="whatsapp-float hover:scale-110" aria-label="Hubungi via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12.04 2C6.58 2 2.13 6.45 2.13 12c0 1.78.46 3.45 1.29 4.94L2.05 22l5.3-1.38c1.42.79 3.03 1.21 4.69 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91zM17.2 15.2c-.22-.12-1.3-.64-1.5-.72-.2-.07-.34-.12-.49.12-.15.23-.57.72-.7.86-.13.15-.26.17-.48.05-.23-.12-1-.37-1.9-1.18-.7-.64-1.17-1.42-1.3-1.67-.13-.25-.01-.38.11-.5.1-.12.23-.3.34-.44.12-.15.15-.25.23-.42.08-.17.04-.31-.01-.43s-1.3-3.13-1.8-4.28c-.46-1.03-.92-.89-1.25-.91-.3-.02-.64-.02-.98-.02-.34 0-.88.12-1.34.57-.46.45-1.75 1.7-1.75 4.15 0 2.45 1.78 4.8 2.03 5.12.25.33 3.48 5.3 8.44 7.4 1.15.48 2.07.77 2.78.98.83.25 1.58.21 2.17.12.66-.09 1.97-.8 2.25-1.58.28-.78.28-1.44.2-1.58-.09-.15-.33-.23-.55-.35z"/>
         </svg>
     </a>
 
-
-    <!-- ===== JAVASCRIPT CANGGIH (Termasuk Dark Mode Logic) ===== -->
+    <!-- SCRIPTS -->
     <script>
-        // Panggil Lucide Icons
-        lucide.createIcons();
+        // Lucide icons (init after DOM)
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.lucide) lucide.createIcons();
+        });
 
-        // --- Logika Dark/Light Mode ---
+        // Theme toggle logic
         const htmlElement = document.documentElement;
         const themeToggleButtons = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
         const sunIcons = document.querySelectorAll('.theme-icon-sun');
         const moonIcons = document.querySelectorAll('.theme-icon-moon');
-        
-        // Fungsi untuk menerapkan tema
+
         function applyTheme(theme) {
             if (theme === 'dark') {
                 htmlElement.classList.add('dark');
@@ -645,9 +742,8 @@
             }
         }
 
-        // 1. Tentukan tema awal saat memuat halaman
         const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
         if (savedTheme) {
             applyTheme(savedTheme);
@@ -657,19 +753,16 @@
             applyTheme('light');
         }
 
-        // 2. Tambahkan event listener untuk toggle
         themeToggleButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const currentTheme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
                 const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
                 localStorage.setItem('theme', newTheme);
                 applyTheme(newTheme);
             });
         });
 
-
-        // --- Logika Menu Mobile Toggle ---
+        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuOpenIcon = mobileMenuButton.querySelector('.mobile-menu-open-icon');
@@ -681,15 +774,25 @@
             mobileMenuCloseIcon.classList.toggle('hidden');
         });
 
-        // Tutup menu mobile saat link di-klik (untuk smooth scroll)
+        // Close mobile menu when link clicked
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                // Beri sedikit penundaan agar scroll selesai sebelum menu tertutup
                 setTimeout(() => {
                     mobileMenu.classList.add('hidden');
                     mobileMenuOpenIcon.classList.remove('hidden');
                     mobileMenuCloseIcon.classList.add('hidden');
-                }, 300); 
+                }, 300);
+            });
+        });
+
+        // Smooth scroll for internal links (enhanced)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
         });
     </script>
